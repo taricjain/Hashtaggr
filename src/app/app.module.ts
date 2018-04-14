@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InstagramComponent } from './instagram/instagram.component';
 import { TwitterComponent } from './twitter/twitter.component';
+import { CardholderComponent } from './cardholder/cardholder.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { TwitterComponent } from './twitter/twitter.component';
     NavbarComponent,
     DashboardComponent,
     InstagramComponent,
-    TwitterComponent
+    TwitterComponent,
+    CardholderComponent
   ],
   imports: [
     BrowserModule

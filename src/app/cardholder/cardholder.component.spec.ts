@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InstagramComponent } from './instagram.component';
+import { CardholderComponent } from './cardholder.component';
 
-describe('InstagramComponent', () => {
-  let component: InstagramComponent;
-  let fixture: ComponentFixture<InstagramComponent>;
+describe('CardholderComponent', () => {
+  let component: CardholderComponent;
+  let fixture: ComponentFixture<CardholderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InstagramComponent ]
+      declarations: [ CardholderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InstagramComponent);
+    fixture = TestBed.createComponent(CardholderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
