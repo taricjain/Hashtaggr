@@ -1,18 +1,32 @@
 .cardholder {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: #1a3c34;
     width: 25%;
-    height: 60%;
+    height: 80%;
+    background-color: #190847;
+    border-radius: 10px;
     margin: 2em 2em;
+    overflow: hidden;
 }
 
-.holder-header {
+.card-scroller {
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 
+.toolbar {
+    background-color: #c4cfcf;
+    padding-top: 5px;
+}
+
+.header-img {
+    height: 80%;
+    width: auto;
+    margin: auto 0;
 }
 
 .card {
-    background-color: #b1f96d;
+    background-color: #c4cfcf;
 }
 
 .card-image {
@@ -27,15 +41,15 @@
     }
     
     ::-webkit-scrollbar-track {
-    border: 1px solid #b1f96d;
+    border: 1px solid #c4cfcf;
     border-radius: 10px;
     }
     
     ::-webkit-scrollbar-thumb {
-    background: #b1f96d;  
+    background: #c4cfcf;  
     border-radius: 10px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-    background: #b1f96d;  
+    background: #c4cfcf;  
     }
