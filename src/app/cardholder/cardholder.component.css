@@ -1,3 +1,41 @@
 .cardholder {
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #1a3c34;
+    width: 25%;
+    height: 60%;
+    margin: 2em 2em;
 }
+
+.holder-header {
+
+}
+
+.card {
+    background-color: #b1f96d;
+}
+
+.card-image {
+    height: 100%;
+    width: 100%;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    border: 1px solid #b1f96d;
+    border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background: #b1f96d;  
+    border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background: #b1f96d;  
+    }
