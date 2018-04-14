@@ -1,11 +1,3 @@
 .cardholder {
-
-}
-
-.cardheader {
-    
-}
-
-.card {
-
+    overflow: scroll;
 }
