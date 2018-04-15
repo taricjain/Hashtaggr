@@ -78,11 +78,7 @@
   }
 
   .progress-holder {
-<<<<<<< HEAD
     width: 30%;
-=======
-    width: 35%;
->>>>>>> 680cfe3dabf32f58cf6c9be24027bd203caa52d4
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
@@ -91,11 +87,7 @@
 #percentage-bar {
     height: 5px;
     border-radius: 1px;
-<<<<<<< HEAD
     background: linear-gradient(left, #03244d, #a8a8a8 70%, #dd550c);
-=======
-    background: linear-gradient(to right, #d3d3d3, #a8a8a8 50%, #151515);
->>>>>>> 680cfe3dabf32f58cf6c9be24027bd203caa52d4
 }
 
 .progress-bar__primary {
