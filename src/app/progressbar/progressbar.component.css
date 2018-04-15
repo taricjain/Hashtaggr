@@ -1,0 +1,22 @@
+#percentage-bar {
+    margin: 1em auto 2em;
+    height: 3em;
+    border-radius: 10px;
+    background: linear-gradient(left, green, #FFEF00 30%, red);
+}
+
+.progress-bar__primary {
+    background: transparent;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    top: 1em;
+}
+
+.progress-bar__secondary {
+    background: transparent;
+    text-align: center;
+    color: black;
+    top: 1em;
+    right: 0;
+}
