@@ -91,7 +91,7 @@
 #percentage-bar {
     height: 5px;
     border-radius: 1px;
-    background: linear-gradient(left, #03244d, #a8a8a8 70%, #dd550c);
+    background: linear-gradient(left, #03244d, #a8a8a8 50%, #dd550c);
 }
 
 .progress-bar__primary {
