@@ -1,3 +1,7 @@
+:root {
+  --percent: 50%;
+}
+
 .card-viewer {
     height: 100%;
     display: flex;

@@ -1,7 +1,7 @@
 <div class="card progress-holder">
   <div style="text-align: center; font-weight: bold">Talk of the Town:</div>
-  <p class="oned" style="display: inline-block">30% Positive</p>
-  <p class="twod" style="display: block; float: right;">70% Negative</p>
+  <p class="oned" style="display: inline-block">{{ positive | number : '1.2-2' }}%Positive</p>
+  <p class="twod" style="display: block; float: right;">{{ negative | number : '1.2-2' }}% Negative</p>
   <div id="percentage-bar" class="progress-bar progress-bar--material"></div>
 </div>
 

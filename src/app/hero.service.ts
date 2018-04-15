@@ -43,6 +43,7 @@ export class HeroService {
   getNewsData(searchTag: string, callback: CallbackInterface) {
     this.httpService.get("http://localhost:8000/data/news/?query=" + searchTag)
     .subscribe((response) => {
+      this.fileToken = response["token"];
       var newsData = new Array<NewsData>();
       response["data"]["articles"].forEach(element => {
         var newsDataObj = {} as NewsData;
