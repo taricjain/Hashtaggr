@@ -51,6 +51,8 @@ button[type=submit] {
   box-sizing: border-box;
 }
 
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 h1 {
   padding: 50px 0;
   font-weight: 400;
@@ -96,8 +98,8 @@ label:before {
 }
 
 label[for='1']:before { content: url('../../assets/img/icons/allNewsIcon.png'); }
-label[for='2']:before { content: url('../../assets/img/icons/socialmediaicon.png');}
-label[for='3']:before { content: url('../../assets/img/icons/majorNewsIcon.png');}
+label[for='2']:before { content: url('../../assets/img/icons/socialmediaicon.png'); }
+label[for='3']:before { content: url('../../assets/img/icons/majorNewsIcon.png'); }
 label[for='4']:before { content: '\f1a9';}
 
 label:hover {
