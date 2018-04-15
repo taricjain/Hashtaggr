@@ -55,10 +55,6 @@ button[type=submit] {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100vh;
-}
-
 body {
   font: 14px/1 'Open Sans', sans-serif;
   color: #555;
@@ -77,11 +73,12 @@ p {
 }
 
 main {
-  min-width: 320px;
-  max-width: 800px;
+  height: 100%;
+  width: 100%;
   padding: 50px;
   margin: 0 auto;
   background: #fff;
+  overflow: hidden;
 }
 
 section {
