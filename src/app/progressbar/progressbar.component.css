@@ -7,7 +7,7 @@
 #percentage-bar {
     height: 5px;
     border-radius: 1px;
-    background: linear-gradient(left, #d3d3d3, #a8a8a8 50%, #151515);
+    background: linear-gradient(to right, #d3d3d3, #a8a8a8 50%, #151515);
 }
 
 .progress-bar__primary {
