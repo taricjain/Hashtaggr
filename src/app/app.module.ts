@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardholderComponent } from './cardholder/cardholder.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CardholderComponent } from './cardholder/cardholder.component';
     AppComponent,
     NavbarComponent,
     DashboardComponent,
-    CardholderComponent
+    CardholderComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule

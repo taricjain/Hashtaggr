@@ -1,4 +1,10 @@
+* {
+    font: 14px/1 'Open Sans', sans-serif;
+}
+
 body {
     background-color: rgba(0, 0, 0, 0.05);
     overflow: scroll;
+    color: #555;
+    background: #eee;
 }

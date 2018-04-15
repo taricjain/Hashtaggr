@@ -1,77 +1,78 @@
 .card-viewer {
-    width: auto;
-    height: 85%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-
-.cardholder {
+  }
+  
+  .cardholder {
     width: auto;
     height: 500px;
-    background-color: #190847;
+    background-color: #c9c9c9;
     border-radius: 10px;
     overflow: hidden;
     margin: 0 1.5em;
-}
-
-@media (max-width: 600px) {
+  }
+  
+  @media (max-width: 650px) {
     .card-viewer {
         flex-direction: column;
         width: 100%;
     }
-
+  
     .cardholder {
         margin: 1em 0;
-        width: 100%;
-        height: 100%;
+        width: auto;
+        height: 500px;
     }
-}
-
-.toolbar {
+  }
+  
+  .toolbar {
     background-color: #c4cfcf;
     padding-top: 5px;
-}
-
-.header-img {
+  }
+  
+  .header-img {
     height: 80%;
     width: auto;
     margin: auto 0;
-}
-
-.card-scroller {
+  }
+  
+  .card-scroller {
     height: 90%;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.card {
+  }
+  
+  .card {
     background-color: #c4cfcf;
-}
-
-.card-image {
+    margin: 1em;
+    padding: 1em;
+  }
+  
+  .card-image {
     height: 100%;
     width: 100%;
-}
-
-/* Scrollbar styles */
-::-webkit-scrollbar {
+  }
+  
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-}
-
-::-webkit-scrollbar-track {
+  }
+  
+  ::-webkit-scrollbar-track {
     border: 1px solid #c4cfcf;
     border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #c4cfcf;  
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.7);  
     border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #c4cfcf;  
-}
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,.7);
+  }
