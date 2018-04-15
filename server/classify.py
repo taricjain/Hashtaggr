@@ -17,7 +17,7 @@ def classify(string, blob):
         data['percent'] = data['negative'] * 100
     else:
         data['sentiment'] = 'neutral'
-	data['percent'] = 0
+        data['percent'] = 0
     return data
 
 def clean_string(string):
