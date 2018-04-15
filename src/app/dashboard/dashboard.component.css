@@ -1,8 +1,9 @@
 .form-holder {
     display: flex;
     flex-direction: horizontal;
-    /* justify-content: center; */
+    justify-content: flex-end;
     align-items: center;
+    padding-top: 1em;
     padding-left: 12px;
 }
 
@@ -67,7 +68,10 @@ p {
 
 main {
   width: 100%;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-top: 10px;
   margin: 0 auto;
   background: #fff;
 }
@@ -101,7 +105,6 @@ label:before {
 label[for='tab1']:before { content: url('../../assets/img/icons/allNewsIcon.png'); }
 label[for='tab2']:before { content: url('../../assets/img/icons/socialmediaicon.png'); }
 label[for='tab3']:before { content: url('../../assets/img/icons/majorNewsIcon.png'); }
-label[for='tab4']:before { content: '\f1a9';}
 
 label:hover {
   color: #888;
@@ -117,8 +120,7 @@ input:checked + label {
 
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
-#tab3:checked ~ #content3,
-#tab4:checked ~ #content4 {
+#tab3:checked ~ #content3 {
   display: block;
 }
 
