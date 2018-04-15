@@ -11,6 +11,7 @@
     vertical-align: middle;
     color: black;
     top: .2em;
+    z-index: 0;
 }
 
 .progress-bar__secondary {
