@@ -45,9 +45,6 @@ button[type=submit] {
     margin: 0 0;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
 *, *:before, *:after {
   margin: 0;
   padding: 0;
@@ -98,10 +95,10 @@ label:before {
   margin-right: 10px;
 }
 
-label[for*='1']:before { content: '\f1cb'; }
-label[for*='2']:before { content: '\f17d'; }
-label[for*='3']:before { content: '\f16b'; }
-label[for*='4']:before { content: '\f1a9'; }
+label[for='1']:before { content: url('../../assets/img/icons/allNewsIcon.png'); }
+label[for='2']:before { content: url('../../assets/img/icons/socialmediaicon.png');}
+label[for='3']:before { content: url('../../assets/img/icons/majorNewsIcon.png');}
+label[for='4']:before { content: '\f1a9';}
 
 label:hover {
   color: #888;

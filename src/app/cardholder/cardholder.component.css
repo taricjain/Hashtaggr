@@ -9,7 +9,7 @@
   .cardholder {
     width: auto;
     height: 500px;
-    background-color: #190847;
+    background-color: #c9c9c9;
     border-radius: 10px;
     overflow: hidden;
     margin: 0 1.5em;
@@ -69,10 +69,10 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #c4cfcf;  
+    background: rgba(0,0,0,.7);  
     border-radius: 10px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #c4cfcf;  
+    background: rgba(0,0,0,.7);
   }
