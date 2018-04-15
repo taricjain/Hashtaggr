@@ -54,16 +54,6 @@ button[type=submit] {
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100vh;
-}
-
-body {
-  font: 14px/1 'Open Sans', sans-serif;
-  color: #555;
-  background: #eee;
-}
-
 h1 {
   padding: 50px 0;
   font-weight: 400;
@@ -76,8 +66,7 @@ p {
 }
 
 main {
-  min-width: 320px;
-  max-width: 800px;
+  width: 100%;
   padding: 50px;
   margin: 0 auto;
   background: #fff;
@@ -87,6 +76,83 @@ section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
+}
+
+.card-viewer {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardholder {
+  width: auto;
+  height: 500px;
+  background-color: #190847;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 1.5em;
+}
+
+@media (max-width: 600px) {
+  .card-viewer {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .cardholder {
+      margin: 1em 0;
+      width: auto;
+      height: 500px;
+  }
+}
+
+.toolbar {
+  background-color: #c4cfcf;
+  padding-top: 5px;
+}
+
+.header-img {
+  height: 80%;
+  width: auto;
+  margin: auto 0;
+}
+
+.card-scroller {
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.card {
+  background-color: #c4cfcf;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid #c4cfcf;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4cfcf;  
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c4cfcf;  
 }
 
 input {
