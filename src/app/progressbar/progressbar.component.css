@@ -5,10 +5,9 @@
 }
 
 #percentage-bar {
-    margin: 1em auto 2em;
-    height: 2em;
-    border-radius: 10px;
-    background: linear-gradient(to right, green, #FFEF00 30%, red);
+    height: 5px;
+    border-radius: 1px;
+    background: linear-gradient(left, #d3d3d3, #a8a8a8 50%, #151515);
 }
 
 .progress-bar__primary {
