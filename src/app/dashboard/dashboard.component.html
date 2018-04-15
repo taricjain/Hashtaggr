@@ -22,13 +22,11 @@
     <app-cardholder *ngIf="searchQuery !== undefined" type="social" [query]="searchQuery"></app-cardholder>
   </section>
     
-  <!-- <section id="content3">
-    <app-progressbar></app-progressbar>
-    <app-cardholder type="other_news"></app-cardholder>
+  <section id="content3">
+    <app-cardholder *ngIf="searchQuery !== undefined" type="majormedia" [query]="searchQuery"></app-cardholder>
   </section>
     
-  <section id="content4">
-    <app-progressbar></app-progressbar>
+  <!--<section id="content4">
     <app-cardholder></app-cardholder>
   </section> -->
     

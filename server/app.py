@@ -1,13 +1,24 @@
 import json
 import requests
 import time
-from flask import Flask, request
+import hashlib
+import string
+import random
+import os
+from flask import Flask, request, Response
+from flask_cors import CORS
 from requests_oauthlib import OAuth1
 from newsapi import NewsApiClient
-from flask_cors import CORS
+from textblob import Blobber
+from textblob.sentiments import NaiveBayesAnalyzer
+from classify import get_sentiments
+
 app = Flask(__name__)
 CORS(app)
+# News api class object
 newsapi = NewsApiClient(api_key='52b9002043834474907063ae1d72519f')
+blob = Blobber(analyzer=NaiveBayesAnalyzer())
+
 
 
 TWITTER_CONSUMER_KEY = "UVvvyBVaG2OLZSZcc5qeIvdR9"
@@ -18,7 +29,6 @@ TWITTER_ACCESS_SECRET = "1r7ry7s63tjgZZRNnUfmhYzRGaQJL2rUDjU2VTV4KW69o"
 @app.route('/', methods=['GET'])
 def index_route():
     return 'server'
-
 
 @app.route('/oauth/instagram/')
 def instagram_oauth_handler():
@@ -38,42 +48,96 @@ def instagram_oauth_handler():
 
 @app.route('/data/twitter/')
 def get_twitter_data():
-    # url = "https://api.twitter.com/1.1/search/tweets.json"
-    #
-    # querystring = {"q": request.args.get("query", ""), "lang": "en", "count": 100}
-    # auth = OAuth1(
-    #     TWITTER_CONSUMER_KEY, TWITTER_COMSUMER_SECRET,
-    #     TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET)
-    # response = requests.get(url, auth=auth, params=querystring)
-    # return json.dumps(twitter_parser(json.loads(response.text)))
-    response = open('tweets.json', 'r').read()
-    return response
+    url = "https://api.twitter.com/1.1/search/tweets.json"
+
+    querystring = {"q": request.args.get("query", ""), "lang": "en", "count": 100}
+    auth = OAuth1(
+        TWITTER_CONSUMER_KEY, TWITTER_COMSUMER_SECRET,
+        TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_SECRET)
+    response = requests.get(url, auth=auth, params=querystring)
+    return json.dumps(twitter_parser(json.loads(response.text)))
 
 @app.route('/data/instagram/')
 def get_instagram_data():
-    # search_tag = request.args.get("query").split(' ')
-    # search_tag = ''.join(search_tag)
-    # url = "https://www.instagram.com/explore/tags/{}/?__a=1".format(search_tag)
-    #
-    # instagram_response = requests.get(url)
-    # return json.dumps(instagram_parser(json.loads(instagram_response.text)))
-    response = json.loads(open('insta.json', 'r').read())
-    return json.dumps(instagram_parser(response))
+    search_tag = request.args.get("query").split(' ')
+    search_tag = ''.join(search_tag)
+    url = "https://www.instagram.com/explore/tags/{}/?__a=1".format(search_tag)
+
+    instagram_response = requests.get(url)
+
+    # Generate a token 
+    # Save json data to file
+    # Save file
+
+    instagram_response = json.loads(instagram_response.text)
+    token = rnd_string_hash()
+    data_file = "{}.json".format(token)
+
+    write_to_file(data_file, json.dumps(instagram_response))
+
+    return return_response(token, instagram_parser(instagram_response))
 
 @app.route('/data/news/')
 def get_news_data():
-    # search_query = str(request.args.get("query"))
-    # top_headlines = newsapi.get_top_headlines(q=search_query, language='en')
-    # return json.dumps(top_headlines)
-    return open('news.json', 'r').read()
+    search_query = str(request.args.get("query"))
+    top_headlines = newsapi.get_top_headlines(q=search_query, language='en')
+    # Generate a token 
+    # Save json data to file
+    # Save file
+    token = rnd_string_hash()
+    data = json.dumps(top_headlines)
+    data_file = "{}.json".format(token)
+    
+    write_to_file(data_file, data) # returns nothing
+
+    return return_response(token, top_headlines)
+
+
+@app.route('/data/sentiments/news/')
+def get_news_sentiment():
+    filename = "{}.json".format(request.args.get("token"))
+    response_sentiment = {
+        'positive': 0.0,
+        'negative': 0.0
+    }
+    response_counter = {
+        'positive': 0,
+        'negative': 0
+    }
+    # get data from file
+    data = read_from_file(filename)
+    for article in data["articles"]:
+        sentiment = get_sentiments(article["title"].encode("utf-8"), blob)
+        response_sentiment[sentiment['sentiment']] += sentiment['percent']
+        response_counter[sentiment['sentiment']] += 1
+
+    response_sentiment['positive'] = float(response_sentiment['positive'] / response_counter['positive'])
+
+    response_sentiment['negative'] = 100 - response_sentiment['positive']
+    #return data
+    os.remove(filename)
+    return json.dumps(response_sentiment)
 
 
 
+@app.route('/data/setiments/social/')
+def get_social_setiment():
+    filename = "{}.json".format(request.args.get("token"))
+    # pass to classifier
+    # get an average
+    # return
+    return filename
 
 
 
 
 # ################################# PARSERS ######################################
+
+
+def return_response(token, data):
+    resp = Response(json.dumps({'token': token, 'data': data}))
+    resp.headers['Content-Type'] = "application/json"
+    return resp
 
 def twitter_parser(data):
     parsed_tweets = list()
@@ -84,7 +148,7 @@ def twitter_parser(data):
         }
         parsed_tweets.append(temp_tweet)
     return parsed_tweets
-
+    
 
 def instagram_parser(data):
     parsed_insta_posts = list()
@@ -96,7 +160,20 @@ def instagram_parser(data):
         parsed_insta_posts.append(temp_post)
     return parsed_insta_posts
 
+def write_to_file(data_file, data):
+    fhandle = open(data_file, 'w')
+    fhandle.write(data)
+    fhandle.close()
 
+def read_from_file(data_file):
+    fhandle = open(data_file, 'r')
+    data = fhandle.read()
+    fhandle.close()
+    return json.loads(data)
+
+def rnd_string_hash(length=10):
+    rnd_str = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(length))
+    return hashlib.sha256(rnd_str).hexdigest()
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)

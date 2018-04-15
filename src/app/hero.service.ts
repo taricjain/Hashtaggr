@@ -6,6 +6,8 @@ import { CallbackInterface, TweetData, InstagramData, NewsData } from './models'
 @Injectable()
 export class HeroService {
 
+  public fileToken: string;
+
   constructor(private httpService: HttpClient) { }
 
   getTwitterData(searchTag: string, callback: CallbackInterface): void {
@@ -26,7 +28,7 @@ export class HeroService {
     .subscribe(
       (response) => {
         var instagramData = new Array<InstagramData>();
-        response.forEach(element => {
+        response['data'].forEach(element => {
           var item = {} as InstagramData;
           item.caption = element["text"]
           item.picture = element["display_url"]
@@ -42,9 +44,10 @@ export class HeroService {
     this.httpService.get("http://localhost:8000/data/news/?query=" + searchTag)
     .subscribe((response) => {
       var newsData = new Array<NewsData>();
-      response["articles"].forEach(element => {
+      response["data"]["articles"].forEach(element => {
         var newsDataObj = {} as NewsData;
         newsDataObj.title = element["title"];
+        newsDataObj.source = element["source"]["name"];
         newsDataObj.description = element["description"]
         newsDataObj.url = element["url"];
         newsDataObj.imageUrl = element["urlToImage"];
@@ -54,4 +57,6 @@ export class HeroService {
       callback(null, newsData);
     });
   }
+
+  
 }
