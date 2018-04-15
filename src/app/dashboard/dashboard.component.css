@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 .form-holder {
     display: flex;
     flex-direction: horizontal;
@@ -32,7 +35,8 @@ input[type=text]:focus {
 
 button[type=submit] {
     box-sizing: border-box;
-    width: 50px;
+    width: 55px;
+    height: 50px;
     border: 2px solid #ccc;
     /* border-radius: 4px; */
     font-size: 16px;
@@ -46,9 +50,6 @@ button[type=submit] {
     display: inline;
     margin: 0 0;
 }
-  
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 *, *:before, *:after {
   margin: 0;
@@ -56,19 +57,6 @@ button[type=submit] {
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
-html, body {
-  height: 100vh;
-}
-
-body {
-  font: 14px/1 'Open Sans', sans-serif;
-  color: #555;
-  background: #eee;
-}
-
-=======
->>>>>>> master
 h1 {
   padding: 50px 0;
   font-weight: 400;
@@ -81,12 +69,7 @@ p {
 }
 
 main {
-<<<<<<< HEAD
-  min-width: 320px;
-  max-width: 100%;
-=======
   width: 100%;
->>>>>>> master
   padding: 50px;
   margin: 0 auto;
   background: #fff;
@@ -118,19 +101,10 @@ label:before {
   margin-right: 10px;
 }
 
-<<<<<<< HEAD
-label[for*='1']:before { 
-  content: url('../../assets/img/icons/twitter-logo.png');
-}
-label[for*='2']:before { content: '\f17d'; }
-label[for*='3']:before { content: '\f16b'; }
-label[for*='4']:before { content: '\f1a9'; }
-=======
 label[for='tab1']:before { content: url('../../assets/img/icons/allNewsIcon.png'); }
 label[for='tab2']:before { content: url('../../assets/img/icons/socialmediaicon.png'); }
 label[for='tab3']:before { content: url('../../assets/img/icons/majorNewsIcon.png'); }
 label[for='tab4']:before { content: '\f1a9';}
->>>>>>> master
 
 label:hover {
   color: #888;

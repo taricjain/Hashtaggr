@@ -1,58 +1,7 @@
 <form class="form-holder">
-    <input type="text" name="search" placeholder="Search...">
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <input type="text" name="search" placeholder="Search..." autocomplete="off" #search>
+    <button type="submit" (click)="submitSearchQuery(search.value)"><i class="fa fa-search"></i></button>
 </form><br>
-
-    <!-- <div class="tabbar tabbar--top tabbar--material">
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a" checked="checked">
-          <button class="tabbar__button tabbar--material__button" style="background-color: rgba(0, 0, 0, 0.4);">
-            All
-          </button>
-        </label>
-
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button" style="background-color: rgba(0, 131, 179, 0.5);">
-            <img src="https://png.icons8.com/metro/1600/twitter.png" style="width: 50px; height: auto;">
-          </button>
-        </label>
-
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button" style="background-color: rgba(222, 208, 192, 0.5);">
-            <img src="https://png.icons8.com/metro/1600/instagram.png" style="width: 45px; height: auto; padding-top: 3px">
-          </button>
-        </label>
-      
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button" style="background-color: rgba(255, 68, 0, 0.5);">
-            <img src="https://png.icons8.com/metro/1600/reddit.png" style="width: 50px; height: auto;">
-          </button>
-        </label>
-      
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button">
-            <img src="http://files.softicons.com/download/system-icons/windows-8-metro-invert-icons-by-dakirby309/ico/Internet%20Shortcuts%20&%20Manufacturers/The%20New%20York%20Times%20alt.ico"  style="width: 50px; height: auto;">
-          </button>
-        </label>
-
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button">
-            <img src="http://www.chicano.ucla.edu/files/styles/large/public/LA%20Times.png?itok=5iKq_3Qq"  style="width: 50px; height: auto;">
-          </button>
-        </label>
-       
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-a">
-          <button class="tabbar__button tabbar--material__button" style="background-color: rgba(0, 0, 0, 0.9);">
-            <img src="http://www.racetonowhere.com/sites/default/files/icon-wapo_0.png"  style="width: 50px; height: auto;">
-          </button>
-        </label>
-    </div> -->
 
 <main>
   <input id="tab1" type="radio" name="tabs" checked>
@@ -61,33 +10,31 @@
   <input id="tab2" type="radio" name="tabs">
   <label for="tab2">Social Media Threads</label>
 
-  <input id="tab3" type="radio" name="tabs">
+  <!-- <input id="tab3" type="radio" name="tabs">
   <label for="tab3">Major Outlet Threads</label>
 
   <input id="tab4" type="radio" name="tabs">
-  <label for="tab4">Miscellaneous Threads</label>
+  <label for="tab4">Miscellaneous Threads</label> -->
     
   <section id="content1">
     <app-progressbar></app-progressbar>
-    <app-cardholder></app-cardholder>
+    <app-cardholder *ngIf="searchQuery !== undefined" type="news" [query]="searchQuery"></app-cardholder>
   </section>
     
   <section id="content2">
     <app-progressbar></app-progressbar>
-    <app-cardholder></app-cardholder>
+    <app-cardholder *ngIf="searchQuery !== undefined" type="social" [query]="searchQuery"></app-cardholder>
   </section>
     
-  <section id="content3">
+  <!-- <section id="content3">
     <app-progressbar></app-progressbar>
-    <app-cardholder></app-cardholder>
+    <app-cardholder type="other_news"></app-cardholder>
   </section>
     
   <section id="content4">
     <app-progressbar></app-progressbar>
     <app-cardholder></app-cardholder>
-  </section>
+  </section> -->
     
 </main>
 
-
-<app-cardholder></app-cardholder>
