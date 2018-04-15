@@ -1,8 +1,8 @@
 <div class="card progress-holder">
-    <div style="text-align: center; font-weight: bold">Talk of the Town:</div>
-    <p class="oned" style="display: inline-block">30% Positive</p>
-    <p class="twod" style="display: inline-block; float: right;">70% Negative</p>
-    <div id="percentage-bar" class="progress-bar progress-bar--material"></div>
+  <div style="text-align: center; font-weight: bold">Talk of the Town:</div>
+  <p class="oned" style="display: inline-block">30% Positive</p>
+  <p class="twod" style="display: block; float: right;">70% Negative</p>
+  <div id="percentage-bar" class="progress-bar progress-bar--material"></div>
 </div>
 
 <div class="card-viewer">
@@ -83,6 +83,10 @@
           <div class="toolbar__center">
             <img src="../../assets/img/icons/nyt-icon.png" class="header-img"/>
           </div>
+    <div *ngIf="type === 'social' && dataArray !== undefined" class="cardholder">
+      <div class="toolbar" style="background-color: rgba(222, 209, 193, 0.8)">
+        <div class="toolbar__center">
+          <img src="../../assets/img/icons/instagram-icon.png" class="header-img"/>
         </div>
       <div class="card-scroller">
       <div *ngFor="let data of dataArray" class="card card--material">

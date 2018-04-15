@@ -1,10 +1,12 @@
 <form class="form-holder">
-    <input type="text" name="search" placeholder="Search..." #search>
-    <button type="submit" (click)="submitSearchQuery(search.value)"><i class="fa fa-search"></i></button>
+  <img src="../../assets/img/icons/hashtag-logo.png">
+  <input type="text" name="search" placeholder="Search..." #search>
+  <button type="submit" (click)="submitSearchQuery(search.value)"><i class="fa fa-search"></i></button>
 </form><br>
 
 <main>
-    <app-progressbar></app-progressbar>
+  <app-progressbar *ngIf="searchQuery !== undefined"></app-progressbar>
+  
   <input id="tab1" type="radio" name="tabs" checked>
   <label for="tab1">All News Threads</label>
 
