@@ -95,7 +95,7 @@ section {
   margin: 0 1.5em;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .card-viewer {
       flex-direction: column;
       width: 100%;
@@ -128,6 +128,8 @@ section {
 
 .card {
   background-color: #c4cfcf;
+  margin: 1em;
+  padding: 1em;
 }
 
 .card-image {
