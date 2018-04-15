@@ -48,11 +48,16 @@ button[type=submit] {
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 *, *:before, *:after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
 }
 
 body {
@@ -73,19 +78,17 @@ p {
 }
 
 main {
-  height: 100%;
-  width: 100%;
+  min-width: 320px;
+  max-width: 100%;
   padding: 50px;
   margin: 0 auto;
   background: #fff;
-  overflow: hidden;
 }
 
 section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
-  overflow: scroll;
 }
 
 input {
@@ -108,7 +111,9 @@ label:before {
   margin-right: 10px;
 }
 
-label[for*='1']:before { content: '\f1cb'; }
+label[for*='1']:before { 
+  content: url('../../assets/img/icons/twitter-logo.png');
+}
 label[for*='2']:before { content: '\f17d'; }
 label[for*='3']:before { content: '\f16b'; }
 label[for*='4']:before { content: '\f1a9'; }

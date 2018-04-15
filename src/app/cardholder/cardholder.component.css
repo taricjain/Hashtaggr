@@ -8,8 +8,8 @@
 }
 
 .cardholder {
-    width: 27%;
-    height: 100%;
+    width: auto;
+    height: 500px;
     background-color: #190847;
     border-radius: 10px;
     overflow: hidden;
