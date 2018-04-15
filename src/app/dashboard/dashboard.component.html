@@ -1,6 +1,6 @@
 <form class="form-holder">
-    <input type="text" name="search" placeholder="Search...">
-    <button type="submit"><i class="fa fa-search"></i></button>
+    <input type="text" name="search" placeholder="Search..." autocomplete="off" #search>
+    <button type="submit" (click)="submitSearchQuery(search.value)"><i class="fa fa-search"></i></button>
 </form><br>
 
 <main>
@@ -11,20 +11,31 @@
   <input id="tab2" type="radio" name="tabs">
   <label for="tab2">Social Media Threads</label>
 
-  <input id="tab3" type="radio" name="tabs">
+  <!-- <input id="tab3" type="radio" name="tabs">
   <label for="tab3">Major Outlet Threads</label>
+
+  <input id="tab4" type="radio" name="tabs">
+  <label for="tab4">Miscellaneous Threads</label> -->
     
   <section id="content1">
-    
-    <app-cardholder></app-cardholder>
+    <app-progressbar></app-progressbar>
+    <app-cardholder *ngIf="searchQuery !== undefined" type="news" [query]="searchQuery"></app-cardholder>
   </section>
     
   <section id="content2">
-    <app-cardholder></app-cardholder>
+    <app-progressbar></app-progressbar>
+    <app-cardholder *ngIf="searchQuery !== undefined" type="social" [query]="searchQuery"></app-cardholder>
   </section>
     
-  <section id="content3">
-    <app-cardholder></app-cardholder>
+  <!-- <section id="content3">
+    <app-progressbar></app-progressbar>
+    <app-cardholder type="other_news"></app-cardholder>
   </section>
+    
+  <section id="content4">
+    <app-progressbar></app-progressbar>
+    <app-cardholder></app-cardholder>
+  </section> -->
     
 </main>
+

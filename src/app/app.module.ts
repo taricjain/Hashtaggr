@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -7,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardholderComponent } from './cardholder/cardholder.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { HeroService } from './hero.service';
 
 
 @NgModule({
@@ -18,9 +21,13 @@ import { ProgressbarComponent } from './progressbar/progressbar.component';
     ProgressbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    HeroService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

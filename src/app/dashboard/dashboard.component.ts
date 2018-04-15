@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  public searchQuery: string;
 
-  constructor() { }
+  constructor(private apiService: HeroService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  submitSearchQuery(query: string) {
+    this.searchQuery = query;
+    console.log(query);
   }
-
 }

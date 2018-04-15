@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
 .form-holder {
     display: flex;
     flex-direction: horizontal;
@@ -5,13 +8,15 @@
     align-items: center;
     padding-top: 1em;
     padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 3px;
 }
 
 input[type=text] {
     width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     font-size: 16px;
     background-color: white;
     background-position: 10px 10px; 
@@ -31,9 +36,10 @@ input[type=text]:focus {
 
 button[type=submit] {
     box-sizing: border-box;
-    width: 50px;
+    width: 55px;
+    height: 50px;
     border: 2px solid #ccc;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     font-size: 16px;
     background-color: #ddd;
     background-position: 10px 10px; 
@@ -45,9 +51,6 @@ button[type=submit] {
     display: inline;
     margin: 0 0;
 }
-  
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
-@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 *, *:before, *:after {
   margin: 0;
